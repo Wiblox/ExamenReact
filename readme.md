@@ -3,7 +3,7 @@
 ## Fonctionnalités réalisées
 
 - Récupérer la liste des personnes en tendance : OK
-- Charger plus de résultats : Pas OK
+- Charger plus de résultats : Pas OK implementation à la fin si il reste du temps.
 - Récupérer la liste des personnes avec une recherche : OK
 - Annuler une recherche : OK ( Refresh ou recherche vide)
 - Naviguer vers la page de détails (depuis la recherche) : OK
@@ -26,3 +26,5 @@ Ajout des photos de profils.
 Amelioration de la recherche. ( Touche entré + bouton recherche)
 
 Ajout des notifications Toast
+
+La fonction Charger plus de résultats n'a pas été fait j'ai juger qu'elle ne me bloquer pas dans le developpement des autres fonctionalités importantes. Elle aurait été réalisé à la fin si il reste du temps.

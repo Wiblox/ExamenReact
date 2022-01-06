@@ -31,7 +31,7 @@ function searchStackScreens() {
 
 function favStackScreens() {
   return (
-    <FavNavigation.Navigator initialRouteName="Favori">
+    <FavNavigation.Navigator initialRouteName="Favoris">
       <FavNavigation.Screen
         name="Favori"
         component={Favoris}

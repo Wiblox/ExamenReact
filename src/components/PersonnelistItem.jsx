@@ -60,6 +60,7 @@ const PersonnetListItem = ({
       <View style={styles.informationContainer}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{restaurantData.name}</Text>
+          <Text> n°{restaurantData.popularity}</Text>
           {isFav ? (
             <Image
               style={[styles.icon, { marginLeft: "auto" }]}
@@ -67,11 +68,9 @@ const PersonnetListItem = ({
             />
           ) : null}
         </View>
-        <Text style={[styles.data, styles.cuisine]} numberOfLines={1}>
-          Popularity : {restaurantData.popularity}
-        </Text>
+
         {restaurantData.known_for ? (
-          <Text style={[styles.data, styles.cuisine]} numberOfLines={2}>
+          <Text style={[styles.data, styles.cuisine]} numberOfLines={3}>
             {restaurantData.known_for[0].overview}
           </Text>
         ) : null}
@@ -97,7 +96,8 @@ const styles = StyleSheet.create({
   },
   statsContainer: {
     flexDirection: "row",
-    marginTop: 12,
+    marginLeft: 12,
+    padding: 10,
   },
   statContainer: {
     flexDirection: "row",
