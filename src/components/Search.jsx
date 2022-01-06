@@ -75,6 +75,7 @@ const Search = ({ navigation, favRestaurants }) => {
       <TextInput
         placeholder="Name ..."
         onChangeText={(text) => setSearchTerm(text)}
+        onSubmitEditing={SearchPeople}
       />
       <Button
         color={Colors.mainBlue}

@@ -21,3 +21,8 @@ Exo réalise sur telephone android
 La grosse partie manquante c'est la gestion des favoris, le reste est fonctionnel.
 Il y a une "rapide gestion" des erreurs. Certain composant ont été aspiré du projet vu en cours.
 Il y a eu un petit travail sur l'UI
+
+Ajout des photos de profils.
+Amelioration de la recherche. ( Touche entré + bouton recherche)
+
+Ajout des notifications Toast

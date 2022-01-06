@@ -7,6 +7,9 @@ import { getPopularPeopleDetails } from "../api/TheMovieDBAPI";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 import Assets from "../definition/Assets";
 import Colors from "../definition/Colors";
+
+import Toast from "react-native-root-toast";
+
 const People = ({ route, dispatch }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [People, setPeople] = useState(null);
@@ -33,13 +36,34 @@ const People = ({ route, dispatch }) => {
     }
   };
 
+  const toast = async () => {
+    let toast = Toast.show(
+      People.name + " ajouté aux favoris(  Ne marche pas ) ",
+      {
+        duration: Toast.durations.LONG,
+      }
+    );
+  };
+
   const displaySavePeople = () => {
     if (1 != 1) {
       // La personne est sauvegardé
-      return <Button title="Retirer des favoris" color={Colors.mainGreen} />;
+      return (
+        <Button
+          title="Retirer des favoris"
+          onPress={toast}
+          color={Colors.mainGreen}
+        />
+      );
     }
     // La personne n'est pas sauvegardé
-    return <Button title="Ajouter aux favoris" color={Colors.mainGreen} />;
+    return (
+      <Button
+        title="Ajouter aux favoris"
+        onPress={toast}
+        color={Colors.mainGreen}
+      />
+    );
   };
 
   return (
