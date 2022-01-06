@@ -45,20 +45,13 @@ const PersonnetListItem = ({
           ) : null}
         </View>
         <Text style={[styles.data, styles.cuisine]} numberOfLines={1}>
-          {restaurantData.cuisines}
+          Popularity : {restaurantData.popularity}
         </Text>
-        <View style={styles.statsContainer}>
-          <View style={styles.statContainer}>
-            <Image style={styles.icon} source={Assets.icons.rate} />
-            <Text style={[styles.data, styles.stat]}>
-              {popularity.aggregate_rating}
-            </Text>
-          </View>
-          <View style={styles.statContainer}>
-            <Image style={styles.icon} source={Assets.icons.review} />
-            <Text style={[styles.data, styles.stat]}>{popularity.votes}</Text>
-          </View>
-        </View>
+        {restaurantData.known_for ? (
+          <Text style={[styles.data, styles.cuisine]} numberOfLines={2}>
+            {restaurantData.known_for[0].overview}
+          </Text>
+        ) : null}
       </View>
     </TouchableOpacity>
   );
