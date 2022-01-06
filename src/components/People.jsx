@@ -5,7 +5,8 @@ import DisplayError from "../components/DisplayError";
 import PersonnetListItem from "../components/PersonnelistItem";
 import { getPopularPeopleDetails } from "../api/TheMovieDBAPI";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
-
+import Assets from "../definition/Assets";
+import Colors from "../definition/Colors";
 const People = ({ route, dispatch }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [People, setPeople] = useState(null);
@@ -33,7 +34,7 @@ const People = ({ route, dispatch }) => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       {isError ? (
         <DisplayError message="Impossible de récupérer les données du restaurants" />
       ) : isLoading ? (
@@ -42,17 +43,19 @@ const People = ({ route, dispatch }) => {
         </View>
       ) : (
         <View>
-          <View>
-            <Text>{People.name}</Text>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{People.name}</Text>
           </View>
-          <View>
-            <Text>{People.birthday}</Text>
-          </View>
-          <View>
-            <Text>{People.also_known_as}</Text>
-          </View>
-          <View>
-            <Text>{People.biography}</Text>
+          <View style={styles.informationContainer}>
+            <View>
+              <Text>Date de naissance : {People.birthday}</Text>
+            </View>
+            <View>
+              <Text>{People.also_known_as}</Text>
+            </View>
+            <View>
+              <Text>{People.biography}</Text>
+            </View>
           </View>
         </View>
       )}
@@ -61,3 +64,55 @@ const People = ({ route, dispatch }) => {
 };
 
 export default People;
+
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 8,
+    flex: 1,
+  },
+  informationContainer: {
+    marginLeft: 12,
+    justifyContent: "center",
+  },
+  titleContainer: {
+    flexDirection: "row",
+    margin: 20,
+    justifyContent: "center",
+  },
+  statsContainer: {
+    flexDirection: "row",
+    marginTop: 12,
+  },
+  statContainer: {
+    flexDirection: "row",
+    marginRight: 8,
+  },
+  noThumbnailContainer: {
+    width: 128,
+    height: 128,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  thumbnail: {
+    width: 128,
+    height: 128,
+    borderRadius: 12,
+    backgroundColor: Colors.mainGreen,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  data: {
+    fontSize: 16,
+  },
+  cuisine: {
+    fontStyle: "italic",
+  },
+  icon: {
+    tintColor: Colors.mainGreen,
+  },
+  stat: {
+    marginLeft: 4,
+  },
+});
