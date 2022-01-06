@@ -52,16 +52,20 @@ const Search = ({ navigation, favRestaurants }) => {
   const SearchPeople = async () => {
     setIsRefreshing(true);
     setIsError(false);
-    try {
-      const PopularPeople = await getPeople(searchTerm);
-      setPopularPeople([PopularPeople.results]);
-      console.log(PopularPeople.results);
-    } catch (error) {
-      console.log(error);
-      setIsError(true);
-      setPopularPeople([]);
+    if (searchTerm.length > 0) {
+      try {
+        const PopularPeople = await getPeople(searchTerm);
+        setPopularPeople([PopularPeople.results]);
+        console.log(PopularPeople.results);
+      } catch (error) {
+        console.log(error);
+        setIsError(true);
+        setPopularPeople([]);
+      }
+      setIsRefreshing(false);
+    } else {
+      searchPopularPeople();
     }
-    setIsRefreshing(false);
   };
 
   return (
