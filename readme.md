@@ -1,15 +1,23 @@
 #Examen
 
-Liste des foncionalitées :
+## Fonctionnalités réalisées
 
-● Récupérer la liste des personnes en tendance => OK
-● Charger plus de résultats => PAS OK
-● Récupérer la liste des personnes avec une recherche => OK
-● Annuler une recherche => OK (recherche vide remet à zero ou refresh remet à zero avec les des personnes populaires.)
-● Naviguer vers la page de détails (depuis la recherche) => OK egalement depuis la page des personnes populaires
-● Afficher les informations de base => OK pas l'ui qui est beau mais c'est ok
-● Afficher la liste des médias => photos pas ok, mais affichage du premier film
-● Mettre / enlever des favoris => Pas ok
-● Avoir 2 tabs (recherche et favoris) => OK bien réalisé
-● Affichage des favoris => Pas ok
-● Naviguer vers la page de détails (depuis les favoris) => Pas ok vu que fav pas fait
+- Récupérer la liste des personnes en tendance : OK
+- Charger plus de résultats : Pas OK
+- Récupérer la liste des personnes avec une recherche : OK
+- Annuler une recherche : OK ( Refresh ou recherche vide)
+- Naviguer vers la page de détails (depuis la recherche) : OK
+- Afficher les informations de base : OK
+- Afficher la liste des médias : Photo non mais on affiche le premier film
+- Mettre / enlever des favoris : Pas OK
+- Avoir 2 tabs (recherche et favoris) : OK
+- Affichage des favoris : Pas OK
+- Naviguer vers la page de détails (depuis les favoris) : Pas OK, vu qu'il n'y a pas de gestion des fav, mais le reste est implementer pour pouvoir le faire facilement.
+
+## Remarques éventuelles
+
+Exo réalise sur telephone android
+
+La grosse partie manquante c'est la gestion des favoris, le reste est fonctionnel.
+Il y a une "rapide gestion" des erreurs. Certain composant ont été aspiré du projet vu en cours.
+Il n'y a pas eu de gros travail sur l'UI.
