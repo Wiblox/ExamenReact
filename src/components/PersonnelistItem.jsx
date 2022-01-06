@@ -26,6 +26,29 @@ const PersonnetListItem = ({
     );
   };
 
+  const displayPeopleImage = () => {
+    if (restaurantData.profile_path) {
+      console.log(
+        "https://image.tmdb.org/t/p/original" + restaurantData.profile_path
+      );
+      return (
+        <Image
+          style={styles.thumbnail}
+          source={{
+            uri:
+              "https://image.tmdb.org/t/p/original" +
+              restaurantData.profile_path,
+          }}
+        />
+      );
+    }
+    return (
+      <View style={styles.thumbnail}>
+        <Image source={Assets.icons.missingIMG} />
+      </View>
+    );
+  };
+
   return (
     <TouchableOpacity
       style={styles.container}
@@ -33,7 +56,7 @@ const PersonnetListItem = ({
         onClick(restaurantData.id);
       }}
     >
-      {getThumbnail()}
+      {displayPeopleImage()}
       <View style={styles.informationContainer}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{restaurantData.name}</Text>
