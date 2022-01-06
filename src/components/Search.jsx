@@ -1,9 +1,9 @@
 import React from "react";
 import { View, TextInput, Button } from "react-native";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DisplayError from "../components/DisplayError";
 import PersonnetListItem from "../components/PersonnelistItem";
-import { getPopularPeople } from "../api/TheMovieDBAPI";
+import { getPopularPeople, getPeople } from "../api/TheMovieDBAPI";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 import People from "../components/People";
 
@@ -16,6 +16,11 @@ const Search = ({ navigation, favRestaurants }) => {
   const [isMoreResults, setIsMoreResults] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    searchPopularPeople();
+  }, []);
+
   const navigateToPeopleDetails = (PeopleID) => {
     navigation.navigate("People", { PeopleID });
   };
@@ -44,16 +49,28 @@ const Search = ({ navigation, favRestaurants }) => {
     setIsRefreshing(false);
   };
 
+  const SearchPeople = async () => {
+    setIsRefreshing(true);
+    setIsError(false);
+    try {
+      const PopularPeople = await getPeople(searchTerm);
+      setPopularPeople([PopularPeople.results]);
+      console.log(PopularPeople.results);
+    } catch (error) {
+      console.log(error);
+      setIsError(true);
+      setPopularPeople([]);
+    }
+    setIsRefreshing(false);
+  };
+
   return (
     <View>
-      <TextInput placeholder="Name ..." />
-      <Button
-        title="Rechercher"
-        onPress={() => {
-          console.log(PopularPeople[0]);
-        }}
+      <TextInput
+        placeholder="Name ..."
+        onChangeText={(text) => setSearchTerm(text)}
       />
-      <Button title="Rechercher" onPress={searchPopularPeople} />
+      <Button title="Rechercher" onPress={SearchPeople} />
       <FlatList
         data={PopularPeople[0]}
         keyExtractor={(item) => item.id.toString()}

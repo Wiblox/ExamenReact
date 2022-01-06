@@ -25,3 +25,18 @@ export async function getPopularPeopleDetails(peopletID) {
     throw error;
   }
 }
+
+export async function getPeople(searchTerm) {
+  try {
+    console.log(searchTerm);
+
+    const myHeaders = new Headers({ "user-key": API_KEY });
+    const url = `https://api.themoviedb.org/3/search/person?api_key=${API_KEY}&language=fr-FR&page=1&include_adult=false&query=${searchTerm}`;
+    const response = await fetch(url, { headers: myHeaders });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.log(`Error with function getRestaurantDetails ${error.message}`);
+    throw error;
+  }
+}
