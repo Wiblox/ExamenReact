@@ -1,6 +1,7 @@
 import React from "react";
 
 import Search from "../components/Search";
+import People from "../components/People";
 import Favoris from "../components/Favoris";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -19,6 +20,11 @@ function searchStackScreens() {
         component={Search}
         options={{ title: "Recherche" }}
       />
+      <SearchNavigation.Screen
+        name="People"
+        component={People}
+        options={{ title: "People" }}
+      />
     </SearchNavigation.Navigator>
   );
 }
@@ -30,6 +36,11 @@ function favStackScreens() {
         name="Favoris"
         component={Favoris}
         options={{ title: "Favoris" }}
+      />
+      <SearchNavigation.Screen
+        name="People"
+        component={People}
+        options={{ title: "People" }}
       />
     </FavNavigation.Navigator>
   );
