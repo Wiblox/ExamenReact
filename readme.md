@@ -28,3 +28,14 @@ Amelioration de la recherche. ( Touche entré + bouton recherche)
 Ajout des notifications Toast
 
 La fonction Charger plus de résultats n'a pas été fait j'ai juger qu'elle ne me bloquer pas dans le developpement des autres fonctionalités importantes. Elle aurait été réalisé à la fin si il reste du temps.
+
+![270791391_1288215081688739_3367662420749470481_n](assets\270791391_1288215081688739_3367662420749470481_n.jpg)
+
+
+
+![270322055_1009688839760334_6210258138821703630_n](assets\270322055_1009688839760334_6210258138821703630_n.jpg)
+
+
+
+![269660486_444717803819853_1132186265803716056_n](assets\269660486_444717803819853_1132186265803716056_n.jpg)![269345910_503389831060943_3531656950344188143_n](assets\269345910_503389831060943_3531656950344188143_n.jpg)
+
