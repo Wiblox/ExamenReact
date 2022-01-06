@@ -33,6 +33,15 @@ const People = ({ route, dispatch }) => {
     }
   };
 
+  const displaySavePeople = () => {
+    if (1 != 1) {
+      // La personne est sauvegardé
+      return <Button title="Retirer des favoris" color={Colors.mainGreen} />;
+    }
+    // La personne n'est pas sauvegardé
+    return <Button title="Ajouter aux favoris" color={Colors.mainGreen} />;
+  };
+
   return (
     <View style={styles.container}>
       {isError ? (
@@ -42,7 +51,7 @@ const People = ({ route, dispatch }) => {
           <ActivityIndicator size="large" />
         </View>
       ) : (
-        <View>
+        <View style={styles.containerCardBottom}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{People.name}</Text>
           </View>
@@ -57,6 +66,7 @@ const People = ({ route, dispatch }) => {
               <Text>{People.biography}</Text>
             </View>
           </View>
+          {displaySavePeople()}
         </View>
       )}
     </View>

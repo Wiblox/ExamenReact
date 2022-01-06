@@ -6,6 +6,8 @@ import PersonnetListItem from "../components/PersonnelistItem";
 import { getPopularPeople, getPeople } from "../api/TheMovieDBAPI";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 import People from "../components/People";
+import Assets from "../definition/Assets";
+import Colors from "../definition/Colors";
 
 const Search = ({ navigation, favRestaurants }) => {
   console.log("Hello World");
@@ -74,7 +76,11 @@ const Search = ({ navigation, favRestaurants }) => {
         placeholder="Name ..."
         onChangeText={(text) => setSearchTerm(text)}
       />
-      <Button title="Rechercher" onPress={SearchPeople} />
+      <Button
+        color={Colors.mainBlue}
+        title="Rechercher"
+        onPress={SearchPeople}
+      />
       <FlatList
         data={PopularPeople[0]}
         keyExtractor={(item) => item.id.toString()}

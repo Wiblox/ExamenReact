@@ -20,4 +20,4 @@ Exo réalise sur telephone android
 
 La grosse partie manquante c'est la gestion des favoris, le reste est fonctionnel.
 Il y a une "rapide gestion" des erreurs. Certain composant ont été aspiré du projet vu en cours.
-Il n'y a pas eu de gros travail sur l'UI.
+Il y a eu un petit travail sur l'UI
